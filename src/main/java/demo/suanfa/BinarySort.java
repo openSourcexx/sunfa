@@ -27,7 +27,7 @@ public class BinarySort {
     public static void main(String[] args) {
         int[] list = {1, 2, 3, 4, 5, 6};
         Arrays.sort(list);
-        System.out.println(binarySort(list, 4));
+        System.out.println(binarySort(list, 6));
     }
 
     private static int binarySort(int[] list, int key) {

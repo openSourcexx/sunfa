@@ -1,27 +1,64 @@
 package demo.mianshi;
 
-class Test {
+import java.io.File;
+import java.io.IOException;
+import java.math.BigInteger;
 
-    public static void main(String[] args) {
-        /**
-         * finally语句在try或catch中的return语句执行之后返回之前执行且finally里的修改语句不能影响try或catch中 return已经确定的返回值，
-         * 若finally里也有return语句则覆盖try或catch中的return语句直接返回。
-         *
-         * 1.finally中有return语句，当try执行到return时会执行finally中的代码，其中有return 就直接返回了，如题，返回值为3.
-         2.finally中不含return语句，那么当执行到return时，它会被保存等待finally执行完毕后返回，
-         这个时候无论finally内部如何改变这个值，都不会影响返回结果！
-         */
-        System.out.println(func());
+import demo.suanfa.QuickSort;
+
+public class Test {
+
+    public static void main(String[] args) throws IOException {
+        int[] a = {10,29,38,40,44};
+        s(a);
+
     }
 
-    @SuppressWarnings("finally")
-    public static int func() {
-        try {
-            return 1;
-        } catch (Exception e) {
-            return 2;
-        } finally {
-            return 3;
+    private static int s(int[] a) {
+        int start = 0;
+        int end = a.length-1;
+        int k = 44;
+        while (start <= end){
+            int mid = (start + end) /2;
+            if (a[mid] == k) {
+                System.out.println(mid);
+                return mid;
+            } else if(a[mid] > k) {
+                end = mid - 1;
+            } else {
+                start = mid + 1;
+            }
+        }
+        System.out.println(-1);
+        return  -1;
+    }
+
+    private void read(String path, String tab) {
+        File src = new File(path);
+        File[] files = src.listFiles();
+        for (File file : files) {
+            if (file.isFile()) {
+                System.out.println(tab + file.getName());
+            }
+            if (file.isDirectory()) {
+                System.out.println(file.getName());
+                read(file.getPath(), tab + "\t");
+            }
+        }
+    }
+
+    private static void heapSort(int[] a, int i, int length) {
+        int temp = a[i];
+        for (int k = 2 * i + 1; k < length; k = 2 * k + 1) {
+            if (k + 1 < length && a[k + 1] > a[k]) {
+                k++;
+            }
+            if (a[k] > temp) {
+                QuickSort.swap(a, i, k);
+                i = k;
+            } else {
+                break;
+            }
         }
     }
 }
