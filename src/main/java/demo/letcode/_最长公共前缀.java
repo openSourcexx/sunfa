@@ -20,7 +20,7 @@ public class _最长公共前缀 {
 
     private static void m1() {
         // TODO Auto-generated method stub
-        String strs[] = {"flower", "flow", "flight"};
+        String strs[] = {"flower", "flow", "floght"};
         int len = strs[0].length();
 		/*for(int i = 1;i < strs.length - 1;i++){
 			int len = strs[i].length();

@@ -16,16 +16,16 @@ package demo.letcode;
  */
 public class _反转整数 {
     public static void main(String[] args) {
-        System.out.println(reverse(-123));
+        System.out.println(reverse(-12233221));
     }
 
     public static int reverse(int x) {
         x = (x < 0 ? -x : x);
         int count = 0;
         while (x != 0) {
-            int temp = x % 10;
+            // int temp = x % 10;
+            count = count * 10 + x % 10;
             x /= 10;
-            count = count * 10 + temp;
         }
         if (x < 0) {
             return count = -count;

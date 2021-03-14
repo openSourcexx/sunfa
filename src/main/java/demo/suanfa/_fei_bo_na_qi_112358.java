@@ -11,6 +11,12 @@ public class _fei_bo_na_qi_112358 {
         int a = 1, b = 1, c = 0;
         System.out.print("1 1 ");
         for (int i = 1; i <= 8; i++) {//8个月
+            if (i == 1) {
+                System.out.println("第"+i+"月兔子数"+a);
+            }
+            if (i == 2) {
+                System.out.println("第"+i+"月兔子数"+b);
+            }
             c = a + b;//前2个月赋给第三个月
             a = b;//前2个月赋给第三个月
             b = c;

@@ -28,7 +28,7 @@ public class ThreadSwapPrint {
     }
 }
 
-class MyThread extends Thread {
+class MyThread{
     boolean flag = true;
     int i = 0;
 

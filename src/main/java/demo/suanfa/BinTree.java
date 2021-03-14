@@ -1,6 +1,7 @@
 package demo.suanfa;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -84,7 +85,6 @@ public class BinTree {
         Object[] objs = {0, 1, 2, 3, 4, 5, 6, 7};
         BinTree binTree = new BinTree();
         binTree.createTree(objs);
-
         binTree.inorder(binTree.getRoot());//7 3 1 4 0 5 2 6
         System.out.println();
         binTree.preorder(binTree.getRoot());//0 1 3 7 4 2 5 6
